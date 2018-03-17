@@ -1,47 +1,40 @@
 {
   "author": "Don Cream",
   "license": "MIT",
-  "name": "wpthemetemplate",
+  "name": "LMTemplate",
   "version": "1.0.0",
-  "description": "Bootstrap sample page",
+  "description": "Bootstrap 4 WordPress Template",
   "main": "index.js",
   "scripts": {
     "start": "gulp"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
     "browser-sync": "^2.23.6",
     "es6-promise": "^4.2.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-cache": "^1.0.2",
     "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-inject": "^4.3.0",
     "gulp-jshint": "^2.1.0",
     "gulp-jslint": "^1.0.10",
-    "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
     "gulp-purify-css": "^0.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-rtlcss": "^1.1.0",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "jshint": "^2.9.5",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1"
+    "jshint": "^2.9.5"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
-    "ekko-lightbox": "^5.3.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "jquery-waypoints": "^2.0.5",
-    "popper.js": "^1.12.9",
-    "tether": "^1.4.3",
-    "waypoints": "^4.0.1"
+    "popper.js": "^1.12.9"
   }
 }
