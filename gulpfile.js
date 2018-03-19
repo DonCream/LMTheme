@@ -47,6 +47,12 @@ gulp.task('fa', function(){
     .pipe(gulp.dest("./dist/css"));
 });
 
+// Move Waypoints to ./src/js folder
+gulp.task('ways', function(){
+  return gulp.src('node_modules/waypoints/shortcuts/jquery.waypoints.min.js')
+    .pipe(gulp.dest("./src/js"));
+});
+
 // Move particles.js to src/js
 gulp.task('particles', function(){
   return gulp.src('node_modules/particles.js/particles.js')

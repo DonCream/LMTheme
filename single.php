@@ -1,15 +1,13 @@
 <?php
 /**
  * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
  * @package LamarMcMiller.Me
  */
 
 get_header();
 ?>
-
+<div class="container" id="content">
+	<div class="row">
 	<div id="primary" class="content-area col-md-8">
 		<main id="main" class="site-main">
 
@@ -32,8 +30,8 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<div class="col-md-4">
 		<?php get_sidebar(); ?>
-	</div>
 
+   </div><!-- .row end-->
+</div><!-- .container end -->
 	<?php get_footer();

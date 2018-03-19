@@ -44,9 +44,10 @@ if ( ! function_exists( 'lm_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'lm' ),
+			'menu-1' => esc_html__( 'Primary Menu'),
 		) );
 
+      add_action( 'after_setup_theme', 'lm_setup' );
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -81,13 +82,13 @@ if ( ! function_exists( 'lm_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'lm_setup' );
 
 function lm_add_editor_style() {
 add_editor_style('/dist/css/editor-style.css');
 }
 add_action('admin_init', 'lm_add_editor_style');
 
+add_action( 'after_setup_theme', 'lm_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -121,21 +122,21 @@ function lm_scripts() {
    wp_register_script('popper', '/src/js/popper.min.js'. false, '', true);
 
    wp_enqueue_script('lm-jquery',
-	get_template_directory_uri().'/src/js/jquery.min.js',
+	get_template_directory_uri() .'/src/js/jquery.min.js',
 	array(), '20180315', true);
 
 	wp_enqueue_script('lm-bootstrap', get_template_directory_uri().
 	'/src/js/bootstrap.min.js', array('jquery'), '20180315', true);
 
-	wp_enqueue_script('lm-bootstrap-hover', get_template_directory_uri().
+	wp_enqueue_script('lm-bootstrap-hover', get_template_directory_uri() .
 	'/src/js/bootstrap-hover.js', array('jquery'), '20180315', true);
 
-	wp_enqueue_script('lm-nav-scroll', get_template_directory_uri().
+	wp_enqueue_script('lm-nav-scroll', get_template_directory_uri() .
 	'/src/js/nav-scroll.js', array('jquery'), '20180315', true);
 
 	wp_enqueue_script( 'lm-skip-link-focus-fix', get_template_directory_uri() . '/src/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'gulp-wordpress-javascript', get_template_directory_uri() . './dist/js/app.min.js', array(), '20180316', true );
+	wp_enqueue_script( 'gulp-wordpress-javascript', get_template_directory_uri() . '/dist/js/app.min.js', array(), '20180316', true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

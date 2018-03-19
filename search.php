@@ -1,16 +1,14 @@
 <?php
 /**
  * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
  * @package LamarMcMiller.Me
  */
-
 get_header();
 ?>
-
-	<section id="primary" class="content-area col-md-8">
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+	<section id="primary" class="content-area ">
 		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
@@ -29,11 +27,6 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
 				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
@@ -50,8 +43,8 @@ get_header();
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-	<div class="col-md-4">
 		<?php get_sidebar(); ?>
-	</div>
-
+	
+</div><!-- .row end-->
+</div><!-- .container end -->
 	<?php get_footer();

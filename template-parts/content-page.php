@@ -1,20 +1,19 @@
 <?php
+
 /**
  * Template part for displaying page content in page.php
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package LamarMcMiller.Me
  */
-
 ?>
 
+<div class="container" id="content">
+	<div class="row">
+		<div class="col-md-8">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php if(has_post_thumbnail()) the_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
-
-	<?php lm_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -50,3 +49,6 @@
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
+</div>
+</div><!-- .row end-->
+</div><!-- .container end -->

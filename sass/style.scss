@@ -1,6 +1,6 @@
 /*!
 Theme Name: LamarMcMiller.Me
-Theme URI: http://underscores.me/
+Theme URI:
 Author: Lamar McMiller
 Author URI: http://lamarmcmiller.me
 Description: Bootstrap 4 Theme
@@ -9,21 +9,11 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: lm
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-LamarMcMiller.Me is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
 # Typography
 # Elements
 # Forms
@@ -45,12 +35,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-@import "normalize";
-
-/*--------------------------------------------------------------
+/*---------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
@@ -105,6 +90,392 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "media/media";
 
+/*--------------------------------------------------------------
+# Custom Styles
+--------------------------------------------------------------*/
+
 body {
-   background-color: beige;
+  margin: 0;
+  padding-top: 116px;
+  p {
+    font-family: $main-font;
+    font-size: 20px; }
+}
+
+//Utility spacing classes
+.tab-1 {
+  margin-left: 10px; }
+
+.tab-2 {
+  margin-left: 30px; }
+
+//Remove list styles from all list
+ul {
+  list-style: none; }
+
+//Custom button style
+.custom-btn {
+  position: relative;
+  height: 35px;
+  width: 95px;
+  color: #fff;
+  background-color: $brown; }
+
+nav {
+  background-color: $black;
+  box-shadow: 2px 2px 5px $dkblue;
+  background-image: radial-gradient(circle, $gradient-blue, #000000); }
+
+img.logo-img {
+  width: 60px;
+  height: 60px; }
+
+.navbar-header {
+  font-size: 37px;
+  color: #fff;
+  font-family: $box-heading;;
+  letter-spacing: 1.5px;
+  text-decoration: none !important; }
+
+nav ul li a {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 23px;
+  letter-spacing: 4px;
+  font-family: $nav-font;
+  font-weight: 600;
+  transition: .2s; }
+
+nav ul li a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 105%;
+  height: 2px;
+  background: $dkblue;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: .5s; }
+
+nav ul li a:hover:before {
+  transform: scaleX(1); }
+
+a.nav-link {
+  padding-bottom: 0;
+  padding-top: 0; }
+
+span.slash {
+  font-size: 45px;
+  color: $dkblue;
+  font-weight: 300; }
+
+.search-box {
+  width: 450px;
+  height: 100px;
+  position: relative; }
+
+.input {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  box-sizing: border-box;
+  width: 0px;
+  height: 50px;
+  padding: 0 20px;
+  font-size: 18px;
+  border-radius: 50px;
+  color: $dkblue;
+  border: 3px solid $brown;
+  transition: all 0.8s ease; }
+
+.search-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: $dkblue;
+  border-radius: 50%;
+  right: 8px;
+  top: 20px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  color: #fff;
+  transition: all 0.8s ease; }
+
+.input.active {
+  width: 300px;
+  right: 0px;
+}
+.search-btn.animate {
+  transform: rotate(-360deg);
+  right: -5px; }
+
+// Carousel image size
+.carousel-inner > .carousel-item > img {
+  width: 100%;
+  height: 850px; }
+
+// Multicolored box section
+.box-1 {
+  width: 50%;
+  height: 850px;
+  background: $dkblue;
+  float: left;
+  overflow: hidden;
+  h1 {
+    font-family: $box-heading;;
+    color: #fff; }
+}
+
+
+.box-2 {
+  width: 50%;
+  height: 850px;
+  background: #fff;
+  float: left;
+  overflow: hidden;
+  overflow-y: scroll;
+  h1 {
+    font-family: $content-heading;
+    color: $dkblue;
+   }
+  h3 {
+    font-family: "Abel", sans-serif;
+    color: #636e74;
+    text-decoration: underline;
+    text-decoration-color: $dkblue;
+  }
+  .numbers {
+    color: $dkblue;
+    font-size: 20px;
+  }
+}
+
+
+.box-3 {
+  width: 50%;
+  height: 850px;
+  background: #fff;
+  float: left;
+  overflow: hidden;
+  h1 {
+    font-family: $box-heading;
+  }
+}
+
+.box-4 {
+  width: 50%;
+  height: 850px;
+  background: $brown;
+  float: left;
+  overflow: hidden;
+  h2 {
+    font-family: $content-heading;
+    font-weight: 500;
+  }
+}
+
+.box-5 {
+  width: 50%;
+  height: 850px;
+  background-color: $off-black;
+  float: left;
+  color: #fff;
+  overflow: hidden;
+  h1 {
+    font-family: $box-heading;
+    color: $white;
+  }
+}
+
+.box-6 {
+  width: 50%;
+  height: 850px;
+  background: #fff;
+  float: left;
+  overflow: hidden;
+  overflow-y: scroll;
+  h1 {
+    font-family: $content-heading;
+  }
+    .card {
+    border-color: $dkblue;
+  }
+    .card > h1 {
+    font-family: box-2-header;
+  }
+   #blog-link {
+    color: $dkblue;
+  }
+}
+
+.box-7 {
+  width: 50%;
+  height: 850px;
+  background: #fff;
+  float: left;
+  overflow: hidden;
+  h1 {
+      font-family: $box-heading;
+    }
+}
+
+
+.box-8 {
+  width: 50%;
+  height: 850px;
+  background: $dkblue;
+  float: left;
+  overflow: hidden;
+  h1 {
+    font-family: $content-heading;
+  }
+}
+
+.icons li a {
+  font-size: 40px;
+  margin: 0 15px; }
+
+.icons li .fa {
+  color: #fff; }
+
+.icons li:hover .fa-facebook {
+  color: #3b5998;
+  text-shadow: 0 0 15px #3b5998; }
+
+.icons li:hover .fa-twitter {
+  color: #55acee;
+  text-shadow: 0 0 15px #55acee; }
+
+.icons li:hover .fa-instagram {
+  color: #e95950;
+  text-shadow: 0 0 15px #e95950; }
+
+.icons li:hover .fa-linkedin {
+  color: #007bb5;
+  text-shadow: 0 0 15px #007bb5; }
+
+.icons li:hover .fa-youtube {
+  color: #ff0000;
+  text-shadow: 0 0 15px #ff0000; }
+
+.icons li:hover .fa-pinterest {
+  color: #cb2027;
+  text-shadow: 0 0 15px #cb2027; }
+
+.icons li:hover .fa-github {
+  color: #000000;
+  text-shadow: 0 0 15px #000000; }
+
+.icons li:hover .fa-codepen {
+  color: #fffc00;
+  text-shadow: 0 0 15px #fffc00; }
+
+.icons li:hover .fa-dribbble {
+  color: #ea4c89;
+  text-shadow: 0 0 15px #ea4c89; }
+
+#main-footer {
+  float: left;
+  width: 100%;
+  background-color: #204d5b;
+  h3 {
+    color: $wtblue;
+  }
+}
+
+section > .container-fluid{
+width: 80%;
+background-color: $wtblue;
+}
+
+footer > .container-fluid {
+  width: 90%; }
+
+@media screen and (max-width: 750px) {
+  .box-1,
+  .box-3,
+  .box-5,
+  .box-7 {
+    flex: auto;
+    float: none;
+    width: 100%; }
+
+  .box-2,
+  .box-4,
+  .box-6,
+  .box-8 {
+    float: none;
+    width: 100%;
+  }
+  .box-3 {
+    background: $brown;
+  }
+  .box-4 {
+    background-color: gray;
+  }
+  .box-7 {
+    background: $brown;
+  }
+  .logo-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .slash, .sidebar {
+    display: none;
+  }
+}
+
+.trackInExpand {
+  -webkit-animation: trackInExpand 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: trackInExpand 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
+
+@-webkit-keyframes trackInExpand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0; }
+  40% {
+    opacity: 0.6; }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slideInLeft {
+  -webkit-animation: slideInLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slideInLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#about,
+#blog,
+#contact,
+#work {
+  text-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5), 0 20px 50px rgba(0, 0, 0, 0.6);
+  letter-spacing: -2px; }
+
+ .article {
+    background-color: $wtblue
+}
+
+.recent {
+  background-color: $brown;
+}
+
+.archive {
+  background-color: $off-black;
 }

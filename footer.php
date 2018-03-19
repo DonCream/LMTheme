@@ -1,20 +1,17 @@
 <?php
 /**
  * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
  * @package LamarMcMiller.Me
  */
 
 ?>
 
 	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer row">
-		<div class="site-info col-md-12">
+	<div class="container">
+	 <div class="row">
+	  <div class="col-md-12">
+	<footer id="colophon" class="site-footer">
+		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'lm' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
@@ -28,6 +25,9 @@
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+</div><!--col end -->
+</div><!-- row end -->
+</div><!-- container end -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

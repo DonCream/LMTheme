@@ -14,18 +14,18 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="mobile-web-app-capable" content="yes">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site container">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'lm' ); ?></a>
 
 	<header id="masthead" class="site-header">
-
+     <nav id="menu" class="navbar navbar-expand-xl navbar-light bg-dark" role="navigation">
 		<div class="container">
 
 		<div class="site-branding navbar-brand">
@@ -57,15 +57,17 @@
 				'container' => 'div',
 				'container_id' => 'bs4navbar',
 				'container_class' => 'collapse navbar-collapse',
-				'menu_id' => 'main-menu',
-				'menu_class' => 'navbar-nav mr-auto',
+				'menu_id' => 'menu',
+				'menu_class' => 'navbar-nav ml-auto',
 				'depth' => 2,
 				'fallback_cb' => 'bs4navwalker: :fallback',
 				'walker' => new bs4navwalker()
 			]);
 			?>
-			</div>
 			</nav>
 	</header><!-- #masthead -->
+
+	<div id="page" class="site container">
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'lm' ); ?></a>
 
 	<div id="content" class="site-content row">
