@@ -75,8 +75,8 @@ if ( ! function_exists( 'lm_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 60,
+			'width'       => 60,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -101,7 +101,7 @@ function lm_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'lm_content_width', 1140 );
+	$GLOBALS['content_width'] = apply_filters( 'lm_content_width', 1120 );
 }
 add_action( 'after_setup_theme', 'lm_content_width', 0 );
 
@@ -181,3 +181,13 @@ require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+add_filter('get_custom_logo','change_logo_class');
+
+function change_logo_class($html)
+{
+	$html = str_replace('custom-logo', 'logo-img', $html);
+	return $html;
+}
+//  Remove Wordpress Admin bar
+ show_admin_bar(true);
