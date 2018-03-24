@@ -96,7 +96,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 body {
   margin: 0;
-  padding-top: 0;
+  padding-top: 116px;
   p {
     font-family: $main-font;
     font-size: 20px; }
@@ -122,16 +122,15 @@ ul {
   background-color: $brown; }
 
 nav {
-  background-color: $black; }
+  background-color: $black;
+  box-shadow: 2px 2px 5px $dkblue;
+  background-image: radial-gradient(circle, $gradient-blue, #000000); }
 
 img.logo-img {
   width: 60px;
-  height: 60px;
-  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
+  height: 60px; }
 
-.navbar-brand {
+.navbar-header {
   font-size: 37px;
   color: #fff;
   font-family: $box-heading;;
@@ -152,7 +151,7 @@ nav ul li a:before {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 100%;
+  width: 105%;
   height: 2px;
   background: $dkblue;
   z-index: -1;
@@ -336,7 +335,7 @@ span.slash {
 }
 
 .icons li a {
-  font-size: 35px;
+  font-size: 40px;
   margin: 0 15px; }
 
 .icons li .fa {
@@ -378,10 +377,10 @@ span.slash {
   color: #ea4c89;
   text-shadow: 0 0 15px #ea4c89; }
 
-.main-footer {
+#main-footer {
   float: left;
   width: 100%;
-  background-color: $black;
+  background-color: #204d5b;
   h3 {
     color: $wtblue;
   }
@@ -479,9 +478,4 @@ footer > .container-fluid {
 
 .archive {
   background-color: $off-black;
-}
-
-.hexagon {
-   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }

@@ -6,11 +6,11 @@
 get_header();
 ?>
 
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-	   <div id="primary" class="content-area col-md-10">
+	   <div id="primary" class="content-area col-md-8">
 		<main id="main" class="site-main">
-
+		
 		<?php
 		if ( have_posts() ) :
 
@@ -39,6 +39,7 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+	<?php get_sidebar(); ?>
 </div><!-- .row end-->
 </div><!-- .container end -->
 
