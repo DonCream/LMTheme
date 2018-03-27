@@ -117,7 +117,7 @@ function lm_scripts() {
 
 	wp_enqueue_style( 'lm-style', get_stylesheet_uri() );
 
-   wp_enqueue_style('lm-fa-css', get_template_directory_uri() . '/dist/css/font-awesome.min.css');
+   wp_enqueue_style('lm-fa-css', get_template_directory_uri() . '/fonts/font-awesome.min.css');
 
    wp_register_script('popper', '/src/js/popper.min.js'. false, '', true);
 
