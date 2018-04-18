@@ -14,6 +14,7 @@ const imageMin = require('gulp-imagemin');
 const inject = require('gulp-inject');
 const cache = require('gulp-cache');
 const groupmq = require('gulp-group-css-media-queries');
+const purify = require('gulp-purify-css');
 require('es6-promise').polyfill();
 
 var onError = function(err){
@@ -53,24 +54,6 @@ gulp.task('ways', function(){
     .pipe(gulp.dest("./src/js"));
 });
 
-// Move particles.js to src/js
-gulp.task('particles', function(){
-  return gulp.src('node_modules/particles.js/particles.js')
-    .pipe(gulp.dest("/src/js"));
-});
-
-// Move Lightbox js to src/js
-gulp.task('ekkojs', ['ekkocss'], function(){
-  return gulp.src('node_modules/ekko-lightbox/dist/ekko-lightbox.min.js')
-    .pipe(gulp.dest("./src/js"));
-});
-
-// Move Lightbox css to dist/css
-gulp.task('ekkocss', function(){
-  return gulp.src('node_modules/ekko-lightbox/dist/ekko-lightbox.css')
-    .pipe(gulp.dest("./dist/css"));
-});
-
 // Concat and minify js files and move to /dist/js
 gulp.task('js', function() {
   return gulp.src('./src/js/*.js')
@@ -103,6 +86,15 @@ gulp.task('imageMin', function(){
       .pipe(gulp.dest('./dist/'));
   });
 
+// Minify css and create sourcemaps
+gulp.task('min', function () {
+    return gulp.src('style.css')
+        .pipe(sourcemaps.init())
+        .pipe(cssnano())
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('src'));
+});
+
 // Compile Sass & Inject Into Browser
 gulp.task('sass', function() {
   return gulp.src('./sass/**/*.scss')
@@ -126,12 +118,12 @@ gulp.task('sass', function() {
     });
 
  // Watch Sass & Server
- gulp.task('serve', function(){
+ gulp.task('serve', ['sass'], function(){
    browserSync.init({
-     files: ['./**/*.php'],
-     proxy: 'http://localhost/'
+      server: "/src"
    });
 
+   gulp.watch(['./src/*.html'], ['sass']).on('change', reload);
    gulp.watch(['./sass/**/*.scss'], ['sass']).on('change', reload);
    gulp.watch(['./src/js/*.js'], ['js']).on('change', reload);
    gulp.watch(['images/src/*'], ['imageMin']).on('change', reload);
