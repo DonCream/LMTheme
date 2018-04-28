@@ -3,34 +3,27 @@
  * The template for displaying the footer
  * @package LamarMcMiller.Me
  */
-
 ?>
-
 	</div><!-- #content -->
-	<div class="container">
-	 <div class="row">
-	  <div class="col-md-12">
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'lm' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Powered by %s', 'lm' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'lm' ), 'LM', '<a href="http://webjelly.net">Web Jelly</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	</div><!-- #page -->
+<footer id="main-footer" class="footer">
+	<div class="container-fluid">
+	 <div class="row justify-content-between align-items-center">
+		 <div class="col-md-3 ">
+		 	<?php if(dynamic_sidebar('footer-sidebar-1')) : else : endif; ?>
+		 </div>
+		 <div class="col-md-3">
+		  <?php if(dynamic_sidebar('footer-sidebar-2')) : else : endif; ?>
+		</div>
+		<div class="col-md-3">
+		  <?php if(dynamic_sidebar('footer-sidebar-3')) : else : endif; ?>
+		</div>
+	  <div class="col-md-3">
+		  <?php if(dynamic_sidebar('footer-sidebar-4')) : else : endif; ?>
 </div><!--col end -->
 </div><!-- row end -->
 </div><!-- container end -->
-</div><!-- #page -->
-
-<?php wp_footer(); ?>
+</footer><!-- #colophon -->
 
 </body>
 </html>

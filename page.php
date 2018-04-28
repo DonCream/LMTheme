@@ -1,8 +1,4 @@
 <?php
-/**
- * The template for displaying all pages
- * @package LamarMcMiller.Me
- */
 get_header();
 ?>
 
